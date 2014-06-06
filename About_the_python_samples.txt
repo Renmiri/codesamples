@@ -1,0 +1,19 @@
+Those are samples of a little utility I did for my kids, which is my most recent python work.
+They wanted a way to view 2d picture of dragons on a web site and identify if they were "drakes", "wyverns", 
+"2 headed dragons" or such and I did a smalll tool that does that by comparing a given image to a master set of breed images
+
+The "findbreedid.py" code compares a list of dragons (in xml) to a series of over 250 images on the hard drive 
+and using PIL - Python Image Library - compares sizes and histograms of both images, calculating the
+RMS ,i.e., the root mean square of the difference between histograms. An RMS above 30 is considered a failed match.
+An RMS of 0 is an exact match.
+
+The "listbadbreedid.py program lists all the rms errors above 0 found in the XML list of source images, 
+side by side with it's closest match among the master images.  An RMS above 0 but below 30 is possible for identical 
+images when the master image is saved as gif and the source image is saved as png. Other desirable low RMS values 
+below 30 can happen due to updated art - adding shading or small details to the original art, or new art which 
+isn't yet added to the master image table on the hard drive.
+
+The original list of source art is scrapped from HTML from the "http://dragcave.net/" website and cleaned to proper XML
+by an opensource tool, or just generated on the fly with javascript, by the user typing their "dragon codes"
+
+Additional details about the tool, including download links are here http://forums.dragcave.net/index.php?showtopic=159304
