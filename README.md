@@ -1,4 +1,4 @@
 codesamples
 ===========
 
-Samples of code by Juliana Dutra
+Samples of python and Javascript code by Juliana Dutra
